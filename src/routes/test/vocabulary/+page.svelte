@@ -7,7 +7,7 @@
     let searchQ = "";
     $: if (searchQ !== "") {
         readPageVocabulary = vocabulary.filter(
-            (v) => v.en.includes(searchQ) || v.bn.includes(searchQ)
+            (v) => v.en.toLowerCase().includes(searchQ.toLowerCase()) || v.bn.toLowerCase().includes(searchQ.toLowerCase())
         );
         console.log(readPageVocabulary);
     } else {
